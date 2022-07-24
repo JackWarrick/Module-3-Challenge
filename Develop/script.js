@@ -1,17 +1,19 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+
+// Random number creator and get a random item from a list using random number creator
+
 function randomCreator(x,y){
 return Math.floor(Math.random()*(y-x)+x)
 }
 
 function randomItemFromList(list){
 return list[randomCreator(0, list.length)]
-
 }
 
 
-function generatePassword(chooselower, chooseupper, choosenumbers, choosespecial, passwordLength){
+function generatePassword(){
  console.log ("you clicked the button");
 
  let generatedPassword = '';
@@ -70,6 +72,8 @@ function generatePassword(chooselower, chooseupper, choosenumbers, choosespecial
       return;
     }
 
+    // All of the arrays for different categories
+
     var lowers = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
     var uppers = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -78,6 +82,8 @@ function generatePassword(chooselower, chooseupper, choosenumbers, choosespecial
     var numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
     
     var specials = ['!', '@', '#', '$', '%', '^', '&', '*', '?', '+', '<', '>', '='];
+
+    // A master array for consolidating the arrays that the user chose
 
     var userChoices = []
 
@@ -100,15 +106,10 @@ function generatePassword(chooselower, chooseupper, choosenumbers, choosespecial
 for (var i = 0; i < passwordLength; i++){
   var randomPassword = randomItemFromList(userChoices)
   var randomCharacter = randomItemFromList(randomPassword)
-  console.log(randomCharacter)
+
   generatedPassword += randomCharacter
 }
 
-console.log(generatedPassword)
-
-
-
-// 4. Display generated password on page
  return generatedPassword;
 }
 
@@ -119,11 +120,10 @@ console.log(generatedPassword)
 // Write password to the #password input
 
  //This takes the output of the generatePassword function and gives it the ability to be written out in the password section
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
-
 
   passwordText.value = password;
 
