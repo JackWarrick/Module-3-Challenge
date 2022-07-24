@@ -6,5 +6,5 @@ This repository contains HTML, CSS, and JAVASCRIPT files for a program that gene
 
 # Screenshot
 
-Screenshot of the program
+![Screenshot of the program](./Develop/Password-Generator-Screenshot.jpeg)
 
